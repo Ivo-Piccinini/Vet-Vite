@@ -7,6 +7,8 @@ const Form = ({patients, setPatients, patient, setPatient}) => {
   const [email, setEmail] = useState('');
   const [date, setDate] = useState('');
   const [symptoms, setSymptoms] = useState('');
+  const [adress, setAdress] = useState('');
+  const [phone, setPhone] = useState('');
 
   const [error, setError] = useState(false);
 
@@ -17,6 +19,8 @@ const Form = ({patients, setPatients, patient, setPatient}) => {
       setEmail(patient.email)
       setDate(patient.date)
       setSymptoms(patient.symptoms)
+      setAdress(patient.adress)
+      setPhone(patient.phone)
     }
   }, [patient])
 
@@ -32,8 +36,7 @@ const Form = ({patients, setPatients, patient, setPatient}) => {
     e.preventDefault();
 
     //Validación del Formulario
-      if([name, owner, email, date, symptoms].includes('')) {
-        console.log('hay al menos un campo vacio');
+      if([name, owner, email, date, symptoms, adress, phone].includes('')) {
 
         setError(true);
         return;
@@ -47,7 +50,9 @@ const Form = ({patients, setPatients, patient, setPatient}) => {
         owner, 
         email, 
         date, 
-        symptoms
+        symptoms,
+        adress,
+        phone
       }
 
       if(patient.id) {
@@ -70,6 +75,8 @@ const Form = ({patients, setPatients, patient, setPatient}) => {
       setEmail('');
       setDate('');
       setSymptoms('');
+      setAdress('');
+      setPhone('');
   }
 
 
@@ -115,6 +122,36 @@ const Form = ({patients, setPatients, patient, setPatient}) => {
             className="border-2 w-full p-2 mt-2 placeholder-gray-400 rounded-md"
             value={owner}
             onChange={ (e) => setOwner(e.target.value) }
+          />
+        </div>
+
+        <div className="mb-5">
+          <label htmlFor="adress" className="block text-gray-700 uppercase font-bold">
+            Pet Adress
+          </label>
+
+          <input
+            id="adress"
+            type="text"
+            placeholder="Write your adress"
+            className="border-2 w-full p-2 mt-2 placeholder-gray-400 rounded-md"
+            value={adress}
+            onChange={ (e) => setAdress(e.target.value) }
+          />
+        </div>
+
+        <div className="mb-5">
+          <label htmlFor="phone" className="block text-gray-700 uppercase font-bold">
+            Phone Number
+          </label>
+
+          <input
+            id="phone"
+            type="text"
+            placeholder="Write your phone number"
+            className="border-2 w-full p-2 mt-2 placeholder-gray-400 rounded-md"
+            value={phone}
+            onChange={ (e) => setPhone(e.target.value) }
           />
         </div>
 

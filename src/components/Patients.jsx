@@ -1,6 +1,6 @@
 const Patients = ({ patient, setPatient, deletePatient }) => {
 
-  const { name, owner, email, date, symptoms, id } = patient;
+  const { name, owner, email, date, symptoms, adress, phone, id } = patient;
   const handleDelete = () => {
     const answer = confirm('Do you want delete this patient?');
     
@@ -17,6 +17,14 @@ const Patients = ({ patient, setPatient, deletePatient }) => {
 
       <p className="font-bold mb-3 text-gray-700 uppercase">
         Owner's Name: <span className="font-normal normal-case">{owner}</span>
+      </p>
+
+      <p className="font-bold mb-3 text-gray-700 uppercase">
+        Pet Adress: <span className="font-normal normal-case">{adress}</span>
+      </p>
+
+      <p className="font-bold mb-3 text-gray-700 uppercase">
+        Phone Number: <span className="font-normal normal-case">{phone}</span>
       </p>
 
       <p className="font-bold mb-3 text-gray-700 uppercase">
