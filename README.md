@@ -1,2 +1,2 @@
 # Vet-Vite
-Página web que para manejar pacientes de una veterinaria
+"Vet Vite" es una página web creada en React cuyo propósito es el manejo de pacientes para una veterinaria.
